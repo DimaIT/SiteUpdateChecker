@@ -1,0 +1,23 @@
+
+
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+target/
+lib_managed/
+src_managed/
+project/boot/
+.history
+.cache
+
+

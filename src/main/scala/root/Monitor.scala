@@ -9,7 +9,7 @@ import org.jsoup.Jsoup
  * @author D.Tolpekin
  */
 class Monitor(url: String, selector: String = "", name: String = "", intervalMin: Int = -1) extends Runnable {
-  val interval = intervalMin * 1000
+  val interval = intervalMin * 1000 * 60
   val label = if (name.isEmpty) url else name
 
   def rebuild(newInterval: Int) = {
@@ -28,8 +28,8 @@ class Monitor(url: String, selector: String = "", name: String = "", intervalMin
       scan()
     catch {
       case e: Exception =>
-        println("Error occurs while scanning " + label + "; " + "trying to restart in 5 mins")
-        Thread.sleep(1000 * 60 * 5)
+        println("Error occurs while scanning " + label + "; " + "trying to restart in 10 mins")
+        Thread.sleep(1000 * 60 * 10)
     }
     recursiveScanning()
   }
@@ -38,7 +38,6 @@ class Monitor(url: String, selector: String = "", name: String = "", intervalMin
     var previous: String = get()
     var current: String = get()
     while (current == previous) {
-      println(label + ": one more try")
       Thread.sleep(interval)
       previous = current
       current = get()
@@ -55,6 +54,6 @@ class Monitor(url: String, selector: String = "", name: String = "", intervalMin
 
   def now() = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yy hh:mm"))
 
-  def f(s:String) = if (s.length > 25) s.substring(0, 20) else s
-  override def toString: String = label + ": url=" + f(url) + ", selector=" + f(selector) + ", interval=" + interval
+  def f(s:String) = if (s.length > 25) s.substring(0, 20) + "..." else s
+  override def toString: String = label + ":\turl=" + f(url) + ", selector=" + f(selector) + ", interval=" + (interval/60/1000)
 }

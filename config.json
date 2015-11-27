@@ -25,7 +25,7 @@
     {
       "name" : "poehali",
       "url" : "http://forum.poehali.net/",
-      "intervalMin" : 2
+      "intervalMin" : 30
     }
   ]
 }

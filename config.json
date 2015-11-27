@@ -1,0 +1,31 @@
+{
+  "waitTime" : 10,
+  "targets" : [
+    {
+      "name" : "fr.gov.by/arenda",
+      "url" : "http://www.fr.gov.by/arenda/",
+      "selector" : ".col-lg-9.col-md-9.col-sm-9.col-xs-12",
+      "intervalMin" : 5
+    },
+    {
+      "name" : "sov.minsk.gov",
+      "url" : "http://sov.minsk.gov.by/zhilishchnaya-politika/informatsiya-po-zhilym-pomeshcheniyam-kommercheskogo-ispolzovaniya-v-svyazi-s-kharakterom-trudovykh-otnoshenij",
+      "selector" : ".gray-block"
+    },
+    {
+      "name" : "centr.minsk.gov.b",
+      "url" : "http://centr.minsk.gov.by/zhilishchnaya-politika/predostavlenie-pomeshchenij-kommercheskogo-gosudarstvennogo-zhilishchnogo-fonda",
+      "selector" : ".main-column"
+    },
+    {
+      "name" : "okt.minsk.gov.by",
+      "url" : "http://okt.minsk.gov.by/zhilishchnaya-politika/informatsiya-o-nalichii-zhilykh-pomeshchenij-kommercheskogo-ispolzovaniya/informatsiya-po-zhilym-pomeshcheniyam-kommercheskogo-ispolzovaniya-predostavlyaemykh-grazhdanam-v-svyazi-s-kharakterom-trudovykh-sluzhebnykh-otnoshenij",
+      "selector" : "#center"
+    },
+    {
+      "name" : "poehali",
+      "url" : "http://forum.poehali.net/",
+      "intervalMin" : 2
+    }
+  ]
+}

@@ -11,7 +11,6 @@ import scala.io.Source
 object Reader {
   def read() = {
     implicit val formats = DefaultFormats
-    val conf = parse(Source.fromFile("config.json").mkString).extract[Config]
-    conf.build
+    parse(Source.fromFile("config.json").mkString).extract[Config]
   }
 }

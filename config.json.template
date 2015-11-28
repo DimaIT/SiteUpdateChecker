@@ -1,0 +1,19 @@
+{
+  "comment1" : "waitTime declares time between scans in minutes. You can also declare personal intervalMin for each target",
+  "waitTime" : 10,
+  "comment2" : "connectionTimeOut declares time to wait for site response in seconds.",
+  "connectionTimeOut" : 10,
+  "showFirstScan" : false,
+  "targets" : [
+    {
+      "name" : "google",
+      "url" : "https://www.google.com",
+      "selector" : "#lga",
+      "intervalMin" : 5
+    },
+    {
+      "name" : "waiting for new bootstrap",
+      "url" : "http://getbootstrap.com/"
+    }
+  ]
+}

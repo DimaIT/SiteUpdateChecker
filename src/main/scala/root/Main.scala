@@ -1,17 +1,19 @@
 package root
 
-import java.util.concurrent.ForkJoinPool
 
 /**
  * @author D.Tolpekin
  */
 object Main {
+  val globalConfig = Reader.read()
+
   def main(args: Array[String]): Unit = {
 
-    Reader.read().foreach(m => {
-      println(m)
-      new Thread(m).start()
-    })
+    val scanners = globalConfig.build.map(m => new Thread(m))
+    scanners.foreach(_.start())
+
+
+
     while (true) Thread.sleep(5000)
   }
 }

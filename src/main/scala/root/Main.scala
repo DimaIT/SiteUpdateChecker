@@ -16,7 +16,7 @@ object Main {
     scanners.foreach(_.start())
 
     requestExit(StdIn.readLine())
-    println("Buy-buy")
+    println("Bye-bye")
   }
 
   def requestExit(str: String) {

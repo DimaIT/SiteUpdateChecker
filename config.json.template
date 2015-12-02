@@ -10,10 +10,6 @@
       "url" : "https://www.google.com",
       "selector" : "#lga",
       "intervalMin" : 5
-    },
-    {
-      "name" : "waiting for new bootstrap",
-      "url" : "http://getbootstrap.com/"
     }
   ]
 }

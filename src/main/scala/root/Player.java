@@ -11,9 +11,9 @@ import java.nio.file.Paths;
  */
 public class Player {
     public static final String AUDIO_FILE = "icq.mp3";
+    public static final JFXPanel jfxPanel = new JFXPanel();
 
     public static synchronized void play() throws Exception {
-        new JFXPanel();
         MediaPlayer mediaPlayer = new MediaPlayer(new Media(Paths.get(AUDIO_FILE).toUri().toString()));
         mediaPlayer.play();
         Thread.sleep(1000);

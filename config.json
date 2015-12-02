@@ -2,18 +2,18 @@
   "comment1": "waitTime declares time between scans in minutes.",
   "waitTime": 10,
   "comment2": "connectionTimeOut declares time to wait for site response in seconds.",
-  "connectionTimeOut": 10,
-  "showFirstScan": true,
+  "connectionTimeOut": 30,
+  "showFirstScan": false,
   "targets": [
+    {
+      "url": "http://bobr.by",
+      "intervalMin": 1
+    },
     {
       "name": "google",
       "url": "https://www.google.com",
       "selector": "#lga",
       "intervalMin": 5
-    },
-    {
-      "name": "waiting for new bootstrap",
-      "url": "http://getbootstrap.com/"
     },
     {
       "name": "fr.gov.by/arenda",
@@ -39,7 +39,7 @@
     {
       "name": "poehali",
       "url": "http://forum.poehali.net/",
-      "intervalMin": 5
+      "intervalMin": 1
     }
   ]
 }

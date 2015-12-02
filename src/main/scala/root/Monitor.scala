@@ -36,9 +36,10 @@ class Monitor(url: String, selector: String = "", name: String = "", intervalMin
           + '\n')
       scan(html)
     } catch {
+      case e: InterruptedException => return // exits silently
       case e: Exception =>
         println("Error (" + e.getMessage + ") occurs while scanning \"" + label + "\"; " +
-          "trying to restart in " + (intervalMin * 5) + " mins")
+          "trying to restart in " + (intervalMin * 2) + " mins")
         Thread.sleep(interval * 5)
     }
     recursiveScanning()
@@ -58,7 +59,7 @@ class Monitor(url: String, selector: String = "", name: String = "", intervalMin
     if (!selector.isEmpty)
       Jsoup.parse(new URL(url), conf.connectionTimeOut * 1000).select(selector).html()
     else
-      Jsoup.parse(new URL(url), 5000).html()
+      Jsoup.parse(new URL(url), conf.connectionTimeOut * 1000).html()
   }
 
   def now() = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yy hh:mm"))
